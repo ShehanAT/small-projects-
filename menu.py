@@ -1,4 +1,6 @@
 import  sys 
+game_score = 0
+
 def menu():
     print(" 1.man vs man")
     print("2.man vs computer")
@@ -111,6 +113,7 @@ def player_choice(board):
 
 
 def  hvh_main():
+    global game_score
     i = 1 
     players=player_input()
     
@@ -136,6 +139,10 @@ def  hvh_main():
             i += 1
             if win_check(board, marker):
                 print("You won !")
+                
+                game_score += 10
+                // print out the game score 
+                
                 menu()
                 break
             game_on=full_board_check(board)
